@@ -1,0 +1,51 @@
+.o-btn {
+	@extend %antialias;
+	@extend %rel;
+	@extend %anim;
+	display: inline-flex;
+    align-items: center;
+	height: 74px;
+	line-height: 1;
+	padding: 0 15px;
+	white-space: nowrap;
+	text-transform: uppercase;
+	font: {
+		size: em(25);
+		weight: $semibold;
+	}
+	
+	&--black {
+		background-color: #323232;
+		color: $c-blue;
+		
+		&:hover {
+			background-color: darken(#323232, 25%);
+			color: white;
+		}
+	}
+	
+	&--blue {
+		background-color: $c-blue;
+		color: $c-black;
+		
+		&:hover {
+			background-color: darken($c-blue, 25%);
+			color: white;
+		}
+	}
+	
+	&--white {
+		background-color: white;
+		color: $c-blue--darker;
+		
+		&:hover {
+			background-color: $c-blue--darker;
+			color: white;
+		}
+	}
+	
+	@media screen and ( max-width: $base + px ) {
+		height: get-vw(74);
+		font-size: get-vw(25);
+	}
+}

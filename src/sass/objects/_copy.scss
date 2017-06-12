@@ -1,0 +1,19 @@
+.o-copy {
+	@extend %anim-slow;
+	transition-delay: 500ms;
+	opacity: 1;
+	
+	&--blur {
+		filter: blur(40px);
+	}
+	
+	&--left {
+		transform: translateX(-40px);
+		opacity: 0;
+	}
+	
+	&--top {
+		transform: translateY(-40px);
+		opacity: 0;
+	}
+}

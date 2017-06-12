@@ -1,0 +1,728 @@
+.c-section {
+	@extend %rel;
+	background: {
+		size: cover;
+		repeat: no-repeat;
+		position: center;
+	}
+	max-width: 1920px;	
+	
+	sup {
+		text-transform: uppercase;
+		font-weight: $medium;
+		
+		@media screen and ( max-width: $base + px ) {
+			font-size: get-vw(21);
+		}
+	}
+	
+	&--02, &--04 {
+		@extend %clear;
+	}
+	
+	&--01 {		
+		.o-bgfoto {
+			display: block;
+			margin-bottom: 80px;
+		}
+		
+		sup {
+			font-size: em(21, 52);
+		}
+
+		.o-copy {
+			@extend %abs;
+			top: 390px;
+			right: 20px;
+			
+			@media screen and ( max-width: $project + px ) {
+				top: get-vw(390);
+			}
+		}
+		
+		.title {
+			line-height: 1.1;
+			font: {
+				size: em(52);
+				weight: $light;
+			}
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(52);
+			}
+		}		
+	}
+	
+	&--02 {
+		padding: 120px 20px 100px 0;
+		
+		@media screen and ( max-width: $project + px ) {
+			padding-top: get-vw(120);
+		}
+		
+		hr {
+			margin-bottom: 40px;
+			height: 2px;
+			background-color: white;
+			
+			@media screen and ( max-width: $base + px ) {
+				margin-bottom: get-vw(40);
+			}
+		}
+		
+		header {
+			margin-bottom: 70px;
+
+			@media screen and ( max-width: $base + px ) {
+				margin-bottom: get-vw(70);
+			}
+		}
+		
+		.o-copy {
+			float: right;
+			width: grid(630);
+		}
+
+		.title {
+			font-weight: $light;
+			line-height: 1;
+			color: $c-blue;
+			
+			span {
+				display: block;
+			}
+			
+			.firstline {
+				font-size: em(106);
+				
+				strong {
+					font-weight: em(160, 106);
+					color: white;
+					
+					@media screen and ( max-width: $base + px ) {
+						font-size: get-vw(160);
+					}
+				}
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(106);
+				}
+			}
+			
+			.secondline {
+				font-size: em(70);
+				
+				strong {
+					font-weight: $black;
+				}
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(70);
+				}
+			}
+		}
+		
+		.text {
+			margin-bottom: 40px;
+			color: white;
+			
+			@media screen and ( max-width: $base + px ) {
+				margin-bottom: get-vw(40);
+			}
+
+			&--1 {
+				letter-spacing: 2px;
+				font-size: em(26);
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(26);
+				}
+				
+				strong {
+					font-weight: $extrabold;
+				}
+			}
+			
+			&--2 {
+				text-transform: uppercase;
+				font: {
+					size: em(31);
+					weight: $bold;
+				}
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(31);
+				}
+			}
+		}
+	}
+	
+	&--03 {
+		@extend %clear;
+		//min-height: 100vh;
+		
+		p {
+			margin-bottom: 20px;
+			letter-spacing: 4px;
+			font-size: em(35);
+			color: white;
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(35);
+			}
+		}
+
+		.o-more {
+			padding-left: grid(728, 1400);
+		}
+		
+		.o-copy {
+			@extend %abs;
+			bottom: 140px;
+			left: 60px;
+			width: grid(1400);
+		}
+		
+		.title {
+			text-transform: uppercase;
+			letter-spacing: 10px;
+			font: {
+				size: em(42);
+				weight: $light;
+			}
+			color: $c-blue;
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(42);
+			}
+			
+			strong {
+				font-weight: $extrabold;
+				color: white;
+			}
+			
+			&--01 {
+				margin-bottom: 15px;
+				letter-spacing: 14.1px;					
+			}
+		}		
+	}
+	
+	&--04 {
+		margin-bottom: 80px;
+		padding: 240px 20px 0 0;
+		color: $c-black-brighter;
+
+		@media screen and ( max-width: $project + px ) {
+			padding-top: get-vw(240);
+		}
+		
+		article {
+			@extend %rel;
+			padding: 0 0 180px 20px;
+			border-left: 6px solid $c-black-brighter;
+			
+			&:after {
+				@extend %abs-after;
+				z-index: -1;
+				right: 0; bottom: -270px;
+				width: 740px;
+				height: 860px;
+				background: {
+					image: url(../img/assets/zero.png);
+					size: cover;
+				}
+				
+				@media screen and ( max-width: $base + px ) {
+					bottom: get-vw(-270);
+					width: get-vw(740);
+					height: get-vw(860);
+				}
+			}
+		}
+
+		sup {
+			font-size: em(21, 80);
+		}
+		
+		.o-more {
+			@extend %abs;
+			left: 0;
+			transform: translateX(calc(-100% - 5px));
+		}
+		
+		.o-copy {
+			float: right;
+			width: grid(1200);
+			padding-left: grid(240, 1200);	
+		}
+		
+		.text {
+			padding-bottom: 60px;
+			
+			@media screen and ( max-width: $base + px ) {
+				padding-bottom: get-vw(60);
+			}
+
+			&--1 {
+				font: {
+					size: em(31);
+					style: italic;
+				}
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(31);
+				}
+			}
+			
+			&--2 {
+				font: {
+					size: em(27);
+					weight: $medium;
+				}
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(27);
+				}
+			}
+		}
+		
+		.subtitle {
+			margin-bottom: 80px;
+			letter-spacing: 8px;
+			text-transform: uppercase;
+			font: {
+				size: em(41);
+				weight: $extrabold;
+			}
+			color: white;
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(41);
+				margin-bottom: get-vw(80);
+			}
+		}
+		
+		.title {
+			margin: 0 0 50px -240px;
+			font: {
+				size: em(80);
+				weight: $light;
+			}
+			line-height: 1;
+			
+			@media screen and ( max-width: $base + px ) {
+				margin-left: get-vw(-240);
+				font-size: get-vw(80);
+			}
+		}
+	}
+	
+	&--05 {
+		margin-bottom: 200px;
+
+		.cols {
+			@extend %flex;
+		}
+
+		.col {
+			@extend %rel;
+			
+			&--1 {
+				
+				.c-copy {
+					@extend %abs;
+					top: 0;
+					right: 70px; z-index: 10;
+					width: 730px;
+					padding: 90px 80px 0 0;
+					border-right: 6px solid white;
+					color: white;
+					
+					@media screen and ( max-width: $project + px ) {
+						right: get-vw(70);
+						width: get-vw(730);
+						padding: get-vw(90) get-vw(80) 0 0; 
+					}
+					
+					p {
+						font: {
+							size: em(32);
+							weight: $semibold;
+						}
+						
+						@media screen and ( max-width: $project + px ) {
+							font-size: get-vw(32);
+						}
+					}
+					
+					strong {
+						font-weight: $extrabold;
+					}
+					
+					.title {
+						margin-bottom: 10px;
+						font: {
+							size: em(55);
+							weight: $black;
+						}
+						
+						@media screen and ( max-width: $project + px ) {
+							margin-bottom: get-vw(10);
+							font-size: get-vw(55);
+						}
+					}
+				}
+			}
+			
+			&--2 {
+				@extend %flex;
+				align-items: flex-end;
+				flex-wrap: wrap;
+				
+				.c-copy {
+					position: absolute;
+					width: 100%;
+					left: 0; top: 0;
+					padding: 160px 150px 0 70px;
+
+					@media screen and ( max-width: $project + px ) {
+						padding: get-vw(160) get-vw(150) 0 get-vw(70);
+					}
+					
+					p {
+						font-size: em(27);
+						color: #282828;
+						
+						@media screen and ( max-width: $project + px ) {
+							font-size: get-vw(27);
+						}
+					}
+
+					.title {
+						margin-bottom: 20px;
+						font: {
+							size: em(102);
+							weight: $extrabold;
+						}
+						color: $c-blue;
+						
+						@media screen and ( max-width: $project + px ) {
+							margin-bottom: get-vw(20);
+							font-size: get-vw(102);
+						}
+					}
+				}	
+			}
+		}
+		
+		.o-more {
+			@extend %abs-x;
+			bottom: 70px;
+		}
+		
+		.photo {
+			@extend %rel;
+		}
+	}
+	
+	&--06 {
+		margin-bottom: 85px;
+
+		.o-copy {
+			&--01 {
+				width: 1080px;
+				margin-bottom: 60px;
+				text-align: right;
+				
+				@media screen and ( max-width: $project + px ) {
+					width: grid(1080, $project);
+				}
+			}
+			
+			&--02 {
+				@extend %abs;
+				right: 0; bottom: 40px;
+				width: 530px;
+				text-align: left;
+				font-size: em(25);
+				font-weight: $light;
+				color: white;
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(25);
+				}
+			}
+		}
+		
+		.title--01 {
+			letter-spacing: 4px;
+			font: {
+				weight: $light;
+				size: em(85);
+			}
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(85);
+			}
+		
+			strong {
+				font-weight: $black;
+			}
+		}
+		
+		.title--02 {
+			text-transform: uppercase;
+			font-size: em(39);	
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(39);
+			}		
+		}
+		
+		strong {
+			color: $c-blue;
+		}
+		
+		sup {
+			font-size: em(21, 85);
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(21);
+			}
+		}
+	}
+	
+	&--07 {
+		margin-bottom: 100px;
+	}
+	
+	&--08 {
+		.o-copy {
+			@extend %rel;
+			top: -40px;
+		}
+		
+		@media screen and ( max-width: $project + px ) {
+			top: get-vw(-40);
+		}
+
+		p {
+			line-height: .87;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: $bold;
+			color: white;
+			
+			&.firstline {
+				font-size: em(507.31);
+				
+				@media screen and ( max-width: $project + px ) {
+					font-size: get-vw(507);
+				}
+			}
+			
+			&.secondline {
+				font-size: em(199.27);
+				
+				@media screen and ( max-width: $project + px ) {
+					font-size: get-vw(199);
+				}
+			}
+			
+			&.thirdline {
+				font-size: em(198.87);
+				
+				@media screen and ( max-width: $project + px ) {
+					font-size: get-vw(198);
+				}
+			}
+		}
+	}
+	
+	&--09 {
+		margin-bottom: 100px;
+		
+		.o-copy {
+			@extend %abs;
+			width: 100%;
+			padding-left: 90px; bottom: 165px;
+			
+			@media screen and ( max-width: $project + px ) {
+				padding-left: get-vw(90);
+				bottom: get-vw(165);
+			}
+			
+			.firstline {
+				font: {
+					size: em(83.16);
+					weight: $bold;
+				}
+				color: white;
+				
+				@media screen and ( max-width: $project + px ) {
+					font-size: get-vw(83);
+				}
+			}
+			
+			.secondline {
+				font: {
+					size: em(27.81);
+					weight: $medium;
+				}
+				color: white;
+				
+				@media screen and ( max-width: $project + px ) {
+					font-size: get-vw(27);
+				}
+			}
+		}
+		
+		.o-more {
+			@extend %abs;
+			left: calc(51% );
+			bottom: -20px;
+
+
+			@media screen and ( max-width: $project + px ) {
+				bottom: get-vw(-20);
+			}
+		}
+	}
+	
+	&--10 {
+		text-align: center;
+	
+		.highlight {
+			@extend %rel;
+			padding: 10px;
+			text-transform: uppercase;
+			background-color: $c-blue;
+			font: {
+				size: em(25);
+				weight: $extrabold;
+			}
+			color: white;
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(25);
+			}
+			
+			&:after {
+				@extend %abs-after;
+				left: 0; bottom: -1px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 40px 0 0 50px;
+				border-color: transparent transparent transparent white;
+			}
+		}
+
+		.o-copy {
+			@extend %abs-xy;
+			width: 540px;
+			transform: translate(-50%, -50%) !important;
+			
+			@media screen and ( max-width: $base + px ) {
+				width: grid(540, 1920);
+			}
+			
+			.title {
+				margin-bottom: 30px;
+				text-transform: uppercase;
+				font: {
+					size: em(39.72);
+					weight: $black;
+				}
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(39);
+				}
+			}
+			
+			p {
+				margin-bottom: 1em;
+				line-height: 1.2;
+				font: {
+					size: em(33.29);
+					weight: $medium;
+				}
+				
+				@media screen and ( max-width: $base + px ) {
+					font-size: get-vw(33);
+				}
+			}
+		}
+		
+		.o-more {
+			@extend %abs;
+			right: -300px;
+			bottom: -200px;
+			
+			@media screen and ( max-width: $base + px ) {
+				right: get-vw(-300);
+				bottom: get-vw(-200);
+			}
+		}
+	}
+	
+	
+	&--10b {
+		background-color: $c-blue;
+		padding-bottom: 90px;
+		
+		.o-copy {
+			margin: 0 auto;
+			width: 790px;
+			border-left: 9px solid white;
+			padding: {
+				left: 45px;
+				top: 120px;
+			}
+			
+			@media screen and ( max-width: $base + px ) {
+				width: grid(790);
+				padding: {
+					left: get-vw(45);
+					top: get-vw(120);
+				}
+			}
+			
+			article {
+				position: relative;
+				bottom: -15px;
+			}
+		}
+		
+		.firstline {
+			font: {
+				size: em(36.41);
+				weight: $semibold;
+			}
+			color: white;
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(36);
+			}
+		}
+		
+		.secondline {
+			font: {
+				size: em(66.67);
+				weight: $extrabold;
+			}
+			color: #333;
+			
+			@media screen and ( max-width: $base + px ) {
+				font-size: get-vw(66);
+			}
+		}
+	}
+}
+
+.b-loaded .o-copy {
+	opacity: 1;
+	transform: translate(0, 0);
+	filter: blur(0);
+}

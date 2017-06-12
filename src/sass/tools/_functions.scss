@@ -1,0 +1,12 @@
+@function em( $target, $context: $base-font-size ) {
+    @return ( $target / $context ) * 1em;
+}
+
+@function grid( $width, $context: $base ) {
+    @return percentage( $width / $context );
+}
+
+@function get-vw($target) {
+	$vw-context: (1920 * 0.01);
+	@return ($target / $vw-context) * 1vw;
+}

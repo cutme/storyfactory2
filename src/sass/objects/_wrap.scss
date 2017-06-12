@@ -1,0 +1,18 @@
+.o-wrap {
+	@extend %clear;
+	@extend %wrap;
+	
+	//background-color: rgba(white, .4);
+	
+	&--abs {
+		@extend %wrap-abs;
+	}
+	
+	&--rel {
+		@extend %wrap-rel;
+	}
+	
+	&--nopadding {
+		padding: 0;
+	}
+}

@@ -1,0 +1,32 @@
+@keyframes pulse_animation {
+	0% { transform: scale(1) translateX(-50%); }
+	30% { transform: scale(1) translateX(-50%); }
+	40% { transform: scale(1.18) translateX(-50%); }
+	50% { transform: scale(1) translateX(-50%); }
+	60% { transform: scale(1) translateX(-50%); }
+	70% { transform: scale(1.15) translateX(-50%); }
+	80% { transform: scale(1) translateX(-50%); }
+	100% { transform: scale(1) translateX(-50%); }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}

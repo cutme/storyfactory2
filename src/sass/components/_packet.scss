@@ -1,0 +1,118 @@
+.c-packet {
+    margin-bottom: 130px;
+    
+    &--2cols {
+	    @extend %flex;
+	    flex-wrap: wrap;
+    }
+    
+    &__content {
+		display: inline-flex;
+	    align-items: center;
+	    margin-bottom: 15px;
+	    width: 1150px;	    
+    }
+    
+    &__description {
+    	width: 740px;
+    	text-transform: uppercase;
+	    font: {
+	    	size: em(27.64);
+	    	weight: $bold;
+	    }
+	    
+	    @media screen and ( max-width: $base + px ) {
+	    	margin-bottom: 20px;
+	    	font-size: get-vw(27);
+	    }
+	    
+    }
+    
+	&__arrow {
+		@extend %flex;
+		align-items: center;
+	    justify-content: flex-end;
+	    padding-right: 20px;
+		width: 210px;
+		height: 110px;
+		background-color: $c-red;
+		font-size: em(80);
+		color: white;
+
+	}
+	
+	&__cta {
+		width: 200px;
+		padding-left: 630px;
+		
+		.o-btn {
+			justify-content: center;
+			width: 200px;
+			height: 42px;
+			font-size: 17px;
+			font-weight: $extrabold;
+			
+			 @media screen and ( max-width: $base + px ) {
+		    	font-size: get-vw(17);
+		    }
+		}
+	}
+	
+	&__info {
+		width: 420px;
+		padding: 0 20px;
+		color: $c-red;
+		
+		@media screen and ( max-width: $base + px ) {
+	    	padding: 0 get-vw(20);
+	    }
+		
+		p {
+			font-size: em(29.17);
+			
+			@media screen and ( max-width: $base + px ) {
+		    	font-size: get-vw(29);
+		    }
+		}
+	}
+	
+	.firstline {
+		font-weight: $medium;
+	}
+	
+	.secondline {
+		letter-spacing: 4px;
+		
+		strong {
+			font-weight: $black;
+			color: $c-blue;
+		}
+	}
+	
+	&__prices {
+		@extend %flex;
+		flex-wrap: wrap;
+		align-content: center;
+		width: 200px;
+		height: 110px;
+		background-color: $c-red;
+		padding-left: 30px;
+		
+		 @media screen and ( max-width: $base + px ) {
+	    	padding-left: get-vw(30);
+	    }
+
+		p {
+			width: 100%;
+			font: {
+				size: em(25);
+				weight: $bold;
+			}
+			color: white;
+			
+			 @media screen and ( max-width: $base + px ) {
+		    	font-size: get-vw(25);
+		    }
+		}
+	}
+}

@@ -1,0 +1,52 @@
+body {
+	@include antialias;
+	line-height: 1.25;
+	text-rendering: optimizeSpeed;
+	font: {
+		family: $text;
+		size: #{$base-font-size}px;
+		weight: $regular;
+	}
+	color: $c-gray;
+}
+
+a {
+	@extend %anim;
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	
+	&:hover,
+    &:active,
+    &:focus {
+        //color: inherit;
+        outline: none;
+    }
+    
+    &:after, &:before {
+	    @extend %anim;
+    }
+    
+    i {
+	    @extend %anim;
+    }
+}
+
+br {
+	@media screen and ( max-width: $tablet_portrait + px ) {
+		display: none;
+	}
+}
+
+strong {
+	font-weight: $bold;
+}
+
+sup {
+	vertical-align: top;
+}
+
+::selection {
+	background-color: $c-blue;
+	color: white;
+}
