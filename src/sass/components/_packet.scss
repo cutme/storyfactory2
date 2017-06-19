@@ -1,4 +1,5 @@
 .c-packet {
+	@extend %rel;
     margin-bottom: 130px;
     
     &--2cols {

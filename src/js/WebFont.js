@@ -1,6 +1,6 @@
 	WebFontConfig = {
 		google: {
-			families: ['Raleway:300,400,500,600,700,800,900:latin-ext']
+			families: ['Raleway:100,300,400,500,600,700,800,900:latin-ext']
 		},
 		active: function() { 
 		}

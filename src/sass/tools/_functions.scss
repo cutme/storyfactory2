@@ -10,3 +10,8 @@
 	$vw-context: (1920 * 0.01);
 	@return ($target / $vw-context) * 1vw;
 }
+
+@function get-vw-base($target) {
+	$vw-context: ($base * 0.01);
+	@return ($target / $vw-context) * 1vw;
+}
