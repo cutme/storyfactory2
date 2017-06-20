@@ -488,9 +488,7 @@
 		}
 	}
 	
-	&--06 {
-		margin-bottom: 85px;
-		
+	&--06 {		
 		@media screen and ( max-width: $project + px ) {
 			margin-bottom: get-vw(85);
 		}
@@ -746,7 +744,10 @@
 	&--10b {
 		height: 330px;
 		background-color: $c-blue;
-//		padding-bottom: 90px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(330);
+		}
 		
 		.o-copy {
 			@extend %abs;
@@ -770,6 +771,10 @@
 			article {
 				position: relative;
 				bottom: -15px;
+				
+				@media screen and ( max-width: $project + px ) {
+					bottom: get-vw(-15);
+				}
 			}
 		}
 		
@@ -845,13 +850,6 @@
 	}
 	
 	&--12 {
-		//border-top: 1px solid #acacac;
-		//padding: 130px 0;
-		
-		@media screen and ( max-width: $project + px ) {
-			//padding: get-vw(130) 0;
-		}
-		
 		.c-packet {
 			margin-bottom: 0;
 

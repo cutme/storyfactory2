@@ -1,45 +1,40 @@
 .c-packet {
 	@extend %rel;
-    //margin-bottom: 130px;
-    
+	
+	&--01 {
+		width: 855px;
+		
+		@media screen and ( max-width: $project + px ) {
+			width: get-vw(855);
+		}
+	}
+	
+    &--01,
     &--02 {
 	    padding: 70px 0;
 	    
 	    @media screen and ( max-width: $project + px ) {
 	    	padding: get-vw(70) 0;
 	    }
-    }
-    
-    &--03 {
-	    flex-wrap: wrap;
-	    
-	    .c-packet__cta {
-			display: flex;
-			width: 100% !important;
-			justify-content: flex-end;
-	    }
-	    
-	    .c-packet__info {
-	        flex-grow: 1;
-	    }
-    }
-    
-    &--04 {
-		.c-packet__info {
-		    flex-grow: 1;
-		}
 	}
     
+    &--03 {
+    	flex-wrap: wrap;
+    	width: 630px;
+    	
+    	@media screen and ( max-width: $project + px ) {
+			width: get-vw(630);
+		}
+    }
+
     &--2cols {
 	    @extend %flex;
-	   // flex-wrap: wrap;
     }
     
     &__content {
-		display: inline-flex;
+		display: flex;
 	    align-items: center;
 	    margin-bottom: 15px;
-	    width: 1150px;	    
     }
     
     &__container {
@@ -81,12 +76,12 @@
 	}
 	
 	&__cta {
-		//width: 200px;
-		padding-left: 630px;
+		@extend %flex;
+	    justify-content: flex-end;
 		
 		.o-btn {
 			justify-content: center;
-			width: 200px;
+			//width: 200px;
 			height: 42px;
 			font-size: 17px;
 			font-weight: $extrabold;
@@ -98,7 +93,7 @@
 	}
 	
 	&__info {
-		//width: 420px;
+		flex-grow: 1;
 		padding: 0 20px;
 		color: $c-red;
 		
