@@ -864,20 +864,6 @@
 			    justify-content: space-between;
 				width: 100%;
 			}
-		
-			&__cta {
-				@extend %clear;
-				width: 625px;
-				padding-left: 0;
-				
-				.o-btn {
-					float: right;
-				}
-
-				@media screen and ( max-width: $base + px ) {
-					width: 560px;
-				}
-			}
 
 			&__description {
 				width: 100%;
@@ -1181,22 +1167,7 @@
 				@media screen and ( max-width: $project + px ) {
 					width: get-vw(780);
 				}
-			}
-			
-			&__cta {
-				padding: 0;
-				width: 100%;
-				background: red;
-				
-				.o-btn {
-					float: right;
-					width: 190px;
-					
-					@media screen and ( max-width: $project + px ) {
-						width: get-vw(190);
-					}
-				}
-			}
+			}			
 			
 			&__info {
 				font-weight: $semibold;
