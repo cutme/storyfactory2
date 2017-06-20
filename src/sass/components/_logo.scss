@@ -1,15 +1,6 @@
 .c-logo {
-	@extend %anim;
 	display: inline-block; 
-	border-left: 5px solid $c-blue;
-	padding: 60px 0 0 15px;
-	color: $c-gray--brighter;
 	line-height: 1;
-	transform: translateY(-100%);
-	
-	.b-loaded & {
-		transform: translateY(0);
-	}
 	
 	img {
 		display: inline-block;
@@ -29,7 +20,7 @@
 		}
 		letter-spacing: 8px;
 	}
-	
+
 	&__subtitle {
 		font-size: em(15);
 	}

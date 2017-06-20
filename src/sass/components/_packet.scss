@@ -1,10 +1,38 @@
 .c-packet {
 	@extend %rel;
-    margin-bottom: 130px;
+    //margin-bottom: 130px;
+    
+    &--02 {
+	    padding: 70px 0;
+	    
+	    @media screen and ( max-width: $project + px ) {
+	    	padding: get-vw(70) 0;
+	    }
+    }
+    
+    &--03 {
+	    flex-wrap: wrap;
+	    
+	    .c-packet__cta {
+			display: flex;
+			width: 100% !important;
+			justify-content: flex-end;
+	    }
+	    
+	    .c-packet__info {
+	        flex-grow: 1;
+	    }
+    }
+    
+    &--04 {
+		.c-packet__info {
+		    flex-grow: 1;
+		}
+	}
     
     &--2cols {
 	    @extend %flex;
-	    flex-wrap: wrap;
+	   // flex-wrap: wrap;
     }
     
     &__content {
@@ -14,8 +42,16 @@
 	    width: 1150px;	    
     }
     
+    &__container {
+	    width: 810px;
+	    
+	    @media screen and ( max-width: $base + px ) {
+	    	width: grid(810);
+	    }
+    }
+    
     &__description {
-    	width: 740px;
+    	width: 840px;
     	text-transform: uppercase;
 	    font: {
 	    	size: em(27.64);
@@ -23,6 +59,7 @@
 	    }
 	    
 	    @media screen and ( max-width: $base + px ) {
+	    	width: grid(840);
 	    	margin-bottom: 20px;
 	    	font-size: get-vw(27);
 	    }
@@ -34,16 +71,17 @@
 		align-items: center;
 	    justify-content: flex-end;
 	    padding-right: 20px;
-		width: 210px;
+		//width: 210px;
 		height: 110px;
 		background-color: $c-red;
+		padding-left: 60px;
 		font-size: em(80);
 		color: white;
 
 	}
 	
 	&__cta {
-		width: 200px;
+		//width: 200px;
 		padding-left: 630px;
 		
 		.o-btn {
@@ -60,7 +98,7 @@
 	}
 	
 	&__info {
-		width: 420px;
+		//width: 420px;
 		padding: 0 20px;
 		color: $c-red;
 		
