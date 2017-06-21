@@ -53,6 +53,24 @@
 	text-align: center;
 }
 
+.underline {
+	@extend %rel;
+	
+	&:after {
+		@extend %abs-after;
+		left: 0;
+		bottom: -10px;
+		width: 1000px;
+		height: 6px;
+		background-color: $c-blue;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(6);
+		}
+		
+	}
+}
+
 .weight-medium {
 	font-weight: $medium;
 }

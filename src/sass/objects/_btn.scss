@@ -19,8 +19,10 @@
 		color: $c-blue;
 		
 		&:hover {
-			background-color: darken(#323232, 25%);
+			/*
+background-color: darken(#323232, 25%);
 			color: white;
+*/
 		}
 	}
 	
@@ -29,8 +31,10 @@
 		color: $c-black;
 		
 		&:hover {
-			background-color: darken($c-blue, 25%);
+			/*
+background-color: darken($c-blue, 25%);
 			color: white;
+*/
 		}
 	}
 	
@@ -39,8 +43,10 @@
 		color: $c-blue--darker;
 		
 		&:hover {
-			background-color: $c-blue--darker;
+			/*
+background-color: $c-blue--darker;
 			color: white;
+*/
 		}
 	}
 	

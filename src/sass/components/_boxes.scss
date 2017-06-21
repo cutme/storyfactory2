@@ -119,16 +119,33 @@
 		}
 		
 		&--02 {
+			top: 20%;
+			transform: translateY(0);
 			letter-spacing: 30px;
+			line-height: 1.6;
+			text-align: center;
 			text-transform: uppercase;
 			font: {
 				size: em(25);
 				weight: $extrabold;
 			}
 			
+			&:after {
+				@extend %abs-after;
+				left: 50%;
+				bottom: -50px;
+				transform: translateX(-50%);
+				width: 325px; height: 2px;
+				background-color: white;
+			}
+			
 			@media screen and ( max-width: $project + px ) {
 				letter-spacing: get-vw(30);
 				font-size: get-vw(25);
+				
+				&:after {
+					width: get-vw(325);
+				}
 			}
 		}
 		

@@ -66,20 +66,7 @@
 			font: {
 				size: em(52);
 				weight: $thin;
-			}
-			
-			.underline {
-				@extend %rel;
-				
-				&:after {
-					@extend %abs-after;
-					left: 0;
-					bottom: -10px;
-					width: 560px;
-					height: 6px;
-					background-color: $c-blue;
-				}
-			}
+			}			
 			
 			@media screen and ( max-width: $base + px ) {
 				font-size: get-vw(52);
@@ -281,38 +268,36 @@
 	
 	&--04 {
 		height: 1126px;
-		margin-bottom: 80px;
+		
+		&:after {
+			@extend %abs-after;
+			z-index: -1;
+			right: 4%; bottom: -270px;
+			width: 740px;
+			height: 860px;
+			background: {
+				image: url(../img/assets/zero.png);
+				size: cover;
+			}
+
+			@media screen and ( max-width: $project + px ) {
+				bottom: get-vw(-270);
+				width: get-vw(740);
+				height: get-vw(860);
+			}
+		}
 		
 		@media screen and ( max-width: $project + px ) {
 			height: get-vw(1126);
-			margin-bottom: get-vw(80);
 		}
 		
 		article {
 			@extend %rel;
-			padding-bottom: 180px;
+			//padding-bottom: 180px;
 			
 			@media screen and ( max-width: $project + px ) {
-				padding-bottom: get-vw(180);
-			}
-			
-			&:after {
-				@extend %abs-after;
-				z-index: -1;
-				right: 4%; bottom: -270px;
-				width: 740px;
-				height: 860px;
-				background: {
-					image: url(../img/assets/zero.png);
-					size: cover;
-				}
-				
-				@media screen and ( max-width: $project + px ) {
-					bottom: get-vw(-270);
-					width: get-vw(740);
-					height: get-vw(860);
-				}
-			}
+				//padding-bottom: get-vw(180);
+			}			
 		}
 
 		sup {
@@ -401,13 +386,15 @@
 	
 	&--05 {
 		height: 1114px;
-		
+		overflow: hidden;
+
 		@media screen and ( max-width: $project + px ) {
 			height: get-vw(1114);
 		}
 
 		.cols {
 			@extend %flex;
+			width: 100%;
 		}
 
 		.col {
@@ -429,12 +416,14 @@
 					}
 					
 					p {
+						letter-spacing: 2px;
 						font: {
 							size: em(32);
 							weight: $semibold;
 						}
 						
 						@media screen and ( max-width: $project + px ) {
+							letter-spacing: get-vw(2);
 							font-size: get-vw(32);
 						}
 					}
@@ -474,10 +463,12 @@
 					}
 					
 					p {
+						letter-spacing: 2px;
 						font-size: em(27);
 						color: #282828;
 						
 						@media screen and ( max-width: $project + px ) {
+							letter-spacing: get-vw(2);
 							font-size: get-vw(27);
 						}
 					}
@@ -506,11 +497,7 @@
 			
 			@media screen and ( max-width: $project + px ) {
 				bottom: get-vw(70);
-				left: get-vw(317);
-				
-			//	left: 1230px;
-				
-//				right: get-vw(395);
+				left: get-vw(316.5);
 			}
 			
 		}
@@ -910,11 +897,11 @@
 	&--12 {
 		@extend %clear;
 
-		min-height: 1228px;
+		min-height: 1194px;
 		padding-bottom: 140px;
 		
 		@media screen and ( max-width: $project + px ) {
-			min-height: get-vw(1228);
+			min-height: get-vw(1194);
 			padding-bottom: get-vw(140);
 		}
 		
@@ -1161,6 +1148,18 @@ width: 215px;
 			}
 		}
 		
+		.o-more {
+			@extend %abs;
+			z-index: 10;
+			bottom: 158px;
+			left: 369px;
+			
+			@media screen and ( max-width: $project + px ) {
+				left: get-vw(369.5);
+				bottom: get-vw(158);
+			}
+		}
+		
 		.how {
 			text-transform: uppercase;
 			letter-spacing: 90px;
@@ -1177,6 +1176,7 @@ width: 215px;
 		}
 		
 		.photo {
+			@extend %rel;
 			float: right;
 			width: 1111px;
 			
@@ -1403,7 +1403,7 @@ width: 215px;
 			font-weight: $semibold;
 			
 			strong {
-				font-weight: $black;
+				font-weight: $semibold;
 				color: white;
 			}
 
