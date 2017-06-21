@@ -7,6 +7,10 @@
 		@media screen and ( max-width: $project + px ) {
 			width: get-vw(855);
 		}
+		
+		@media screen and ( max-width: $base + px ) {
+			width: get-vw-base(855);
+		}
 	}
 	
     &--01,
@@ -20,11 +24,19 @@
     
     &--03 {
     	flex-wrap: wrap;
-    	width: 630px;
+    	width: 100%;
     	
-    	@media screen and ( max-width: $project + px ) {
-			width: get-vw(630);
-		}
+    	.c-packet__container {
+    		width: 630px;
+    		
+	    	@media screen and ( max-width: $project + px ) {
+				width: get-vw(630);
+			}
+			
+			@media screen and ( max-width: 1200px ) {
+				width: 100%;
+			}
+    	}    	
     }
 
     &--2cols {
@@ -38,10 +50,11 @@
     }
     
     &__container {
-	    width: 810px;
+		width: 100%;
+	   // width: 810px;
 	    
 	    @media screen and ( max-width: $base + px ) {
-	    	width: grid(810);
+	    	//width: grid(810);
 	    }
     }
     

@@ -7,7 +7,7 @@
 		position: center;
 	}
 	margin: 0 auto;
-	max-width: 1920px;	
+	max-width: 1920px;
 	
 	sup {
 		text-transform: uppercase;
@@ -22,13 +22,19 @@
 		@extend %clear;
 	}
 	
-	&--01 {		
-		.o-bgfoto {
-			display: block;
+	&--01 {
+		height: 1097px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1097);
 		}
 		
 		sup {
 			font-size: em(21, 52);
+		}
+		
+		.o-bgfoto {
+			display: block;
 		}
 		
 		.c-logo {
@@ -40,11 +46,8 @@
 			
 			&__name {
 				font-size: 22px;
-			}
-			
-			
+			}			
 		}
-
 
 		.o-copy {
 			@extend %abs;
@@ -70,10 +73,11 @@
 	}
 	
 	&--02 {
+		height: 1042px;
 		padding: 120px 146px 100px 0;
 		
 		@media screen and ( max-width: $project + px ) {
-			//padding-top: get-vw(120);
+			height: get-vw(1042);
 			padding: get-vw(120) get-vw(146) get-vw(100) 0;
 		}
 		
@@ -181,6 +185,11 @@
 	
 	&--03 {
 		@extend %clear;
+		height: 1294px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1294);
+		}
 		
 		p {
 			margin-bottom: 20px;
@@ -256,9 +265,11 @@
 	}
 	
 	&--04 {
+		height: 1126px;
 		margin-bottom: 80px;
 		
 		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1126);
 			margin-bottom: get-vw(80);
 		}
 		
@@ -374,6 +385,12 @@
 	}
 	
 	&--05 {
+		height: 1114px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1114);
+		}
+
 		.cols {
 			@extend %flex;
 		}
@@ -488,9 +505,11 @@
 		}
 	}
 	
-	&--06 {		
+	&--06 {	
+		height: 855px;
+
 		@media screen and ( max-width: $project + px ) {
-			margin-bottom: get-vw(85);
+			height: get-vw(855);
 		}
 		
 		strong {
@@ -566,23 +585,21 @@
 	}
 	
 	&--07 {
-		//margin-bottom: 100px;
+		height: 1088px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1088);
+		}
 	}
 	
 	&--08 {
+		height: 719px;
 		overflow: hidden;
-
-		.o-copy {
-			@extend %rel;
-			top: -40px;
-			
-			@media screen and ( max-width: $project + px ) {
-				top: get-vw(-40);
-			}
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(719);
 		}
 		
-		
-
 		p {
 			line-height: .87;
 			text-align: center;
@@ -614,9 +631,24 @@
 				}
 			}
 		}
+
+		.o-copy {
+			@extend %rel;
+			top: -40px;
+			
+			@media screen and ( max-width: $project + px ) {
+				top: get-vw(-40);
+			}
+		}		
 	}
 	
-	&--09 {		
+	&--09 {
+		height: 1195px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1195);
+		}
+		
 		.o-copy {
 			@extend %abs;
 			width: 100%;
@@ -665,7 +697,12 @@
 	}
 	
 	&--10 {
+		height: 1095px;
 		text-align: center;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1095);
+		}
 	
 		.highlight {
 			@extend %rel;
@@ -804,6 +841,12 @@
 	}
 	
 	&--11 {
+		height: 803px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(803);
+		}
+		
 		.o-copy {
 			@extend %abs-y;
 			left: calc(50% + 35px);
@@ -850,6 +893,16 @@
 	}
 	
 	&--12 {
+		@extend %clear;
+
+		min-height: 1228px;
+		padding-bottom: 140px;
+		
+		@media screen and ( max-width: $project + px ) {
+			min-height: get-vw(1228);
+			padding-bottom: get-vw(140);
+		}
+		
 		.c-packet {
 			margin-bottom: 0;
 
@@ -858,11 +911,6 @@
 				left: -10px; top: 0;
 				width: 10px; height: 255px;
 				background-color: $c-blue;
-			}
-			
-			&__content {
-			    justify-content: space-between;
-				width: 100%;
 			}
 
 			&__description {
@@ -877,17 +925,19 @@
 					weight: $medium;
 				}
 				
-				@media screen and ( max-width: $base + px ) {
-					font-size: get-vw-base(35);
+				@media screen and ( max-width: $project + px ) {
+					font-size: get-vw(35);
 				}
 			}
 			
 			&__info {
-				width: 215px;
+				/*
+width: 215px;
 
 				@media screen and ( max-width: $base + px ) {
 					width: grid(215);
 			    }
+*/
 
 				p {
 					font-weight: $semibold;
@@ -901,29 +951,47 @@
 		}		
 		
 		.left {
-			@extend %abs;
-			left: 188px;
-			top: 225px;
+			//@extend %abs;
+			float: left;
+			//left: 188px;
+			padding-left: 188px;
+			//top: 225px;
+			padding-top: 225px;
 			width: 650px;			
 			
 			@media screen and ( max-width: $project + px ) {
-				top: get-vw(225);
-				left: get-vw(188);
+				//top: get-vw(225);
+				//left: get-vw(188);
+				
+				padding-left: get-vw(188);
+				padding-top: get-vw(225);
+				
 				width: get-vw(650);
+			}
+			
+			@media screen and ( max-width: $base + px ) {
+				width: get-vw-base(650);
 			}
 		}
 		
 		.right {
-			@extend %abs;
-			right: 120px;
-			top: 260px;
-			width: 800px;
+			//@extend %abs;
+			float: right;
+			padding-right: 120px;
+			//right: 120px;
+			//top: 260px;
+			padding-top: 260px;
+			width: 920px;
 			//overflow: hidden;
 			
 			@media screen and ( max-width: $project + px ) {
-				top: get-vw(260);
-				right: get-vw(120);
-				width: get-vw(800);
+				//top: get-vw(260);
+				//right: get-vw(120);
+				
+				padding-right: get-vw(120);
+				padding-top: get-vw(260);
+				
+				width: get-vw(920);
 			}
 			
 			.question-box {
@@ -960,6 +1028,12 @@
 	}
 	
 	&--13 {
+		height: 1200px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1200);
+		}
+		
 		.o-copy {
 			@extend %abs-y;
 			padding-left: 160px;
@@ -1037,6 +1111,11 @@
 	&--14 {
 		@extend %clear;
 		border-top: 1px solid #b8ae99;
+		height: 1069px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1069);
+		}
 
 		.o-copy {
 			float: left;
@@ -1093,6 +1172,12 @@
 	}
 
 	&--15 {
+		height: 1237px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1237);
+		}
+		
 		.o-copy {
 			@extend %abs;
 			right: 0;
@@ -1182,7 +1267,12 @@
 	
 	&--16 {
 		@extend %clear;
+		min-height: 880px;
 		margin-bottom: 25px;
+		
+		@media screen and ( max-width: $project + px ) {
+			min-height: get-vw(880);
+		}
 
 		.o-copy {
 			float: left;
@@ -1251,6 +1341,12 @@
 	}
 	
 	&--17 {
+		min-height: 1060px;
+		
+		@media screen and ( max-width: $project + px ) {
+			min-height: get-vw(1060);
+		}
+		
 		.destination {
 			@extend %rel;
 			
@@ -1336,6 +1432,12 @@
 	}
 	
 	&--18 {
+		height: 1294px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(1294);
+		}
+
 		.o-copy {
 			@extend %abs;
 			left: 190px;
@@ -1351,6 +1453,12 @@
 	}
 	
 	&--19 {
+		height: 619px;
+		
+		@media screen and ( max-width: $project + px ) {
+			height: get-vw(619);
+		}
+		
 		.c-logo {
 			margin-bottom: 60px;
 			font-weight: $bold;
@@ -1456,7 +1564,6 @@
 		
 		&:not(.static) {
 			transform: translate(0, 0);
-			//filter: blur(0);
 		}
 	}
 }

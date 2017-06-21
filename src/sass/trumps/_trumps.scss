@@ -2,6 +2,32 @@
 	@include icomoon;
 }
 
+.anim {
+	@extend %anim;
+	will-change: transform, opacity;
+	transition-duration: 3s;
+	transition-delay: .5s;
+	opacity: 0;
+	
+	&--bottom {
+		transform: translateY(50px);
+	}
+	
+	&--left {
+		transform: translateX(50px);
+	}
+	
+	&--right {
+		transform: translateX(-50px);
+	}
+	
+	&--done {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
 .extrabold {
 	font-weight: $extrabold;
 }
