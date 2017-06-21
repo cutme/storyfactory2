@@ -24,6 +24,7 @@
 	
 	&--01 {
 		height: 1097px;
+		overflow: hidden;
 		
 		@media screen and ( max-width: $project + px ) {
 			height: get-vw(1097);
@@ -61,9 +62,23 @@
 		
 		.title {
 			line-height: 1.1;
+			letter-spacing: 2px;
 			font: {
 				size: em(52);
-				weight: $light;
+				weight: $thin;
+			}
+			
+			.underline {
+				@extend %rel;
+				
+				&:after {
+					@extend %abs-after;
+					left: 0;
+					bottom: -10px;
+					width: 560px;
+					height: 6px;
+					background-color: $c-blue;
+				}
 			}
 			
 			@media screen and ( max-width: $base + px ) {
