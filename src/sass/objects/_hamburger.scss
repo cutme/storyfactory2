@@ -1,0 +1,23 @@
+.o-hamburger {
+	@extend %anim-slow;
+	//display: none;
+	position: fixed; z-index: 30;
+	top: 50px; right: 20px;
+	padding: 10px;
+	background-color: rgba(white, .9);
+	font-size: em(40);
+	cursor: pointer;
+	opacity: 0;
+	color: $c-gray;
+	z-index: -1;
+	
+	&.is-visible {
+		z-index: 30;
+		//display: block;
+		opacity: 1;
+	}	
+	
+	@media screen and ( min-width: $base + 1px ) {
+		right: calc( (100% - 1660px) / 2 );
+	}
+}

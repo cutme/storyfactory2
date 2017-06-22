@@ -6,32 +6,79 @@
 		right: calc( (100% - 1660px) / 2 );
 	}
 	
-	> ul > li {
-		@extend %rel;
-		display: inline-block;
-		padding: 0 45px;
+	.nav-full & {
+		@extend %anim;
+		left: 0; top: 0; right: 0; bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(white, .95);
+		transform: translateY(20px);
+//		display: none;
+		opacity: 0;
+		z-index: -1;
 		
-		a {
-			display: block;
-			padding-bottom: 15px;
+		@extend %flex;
+		@extend %flex-xy;
+	}
+	
+	.nav-full.is-visible & {
+		z-index: 30;
+		opacity: 1;
+		transform: translateY(0);
+		//animation: show_submenu .5s ease-out;
+	}
+	
+	> ul {
+
+		.nav-full & {
+			@extend %flex;
+			@extend %flex-xy;
+		    flex-direction: column;
 		}
-		
-		@media screen and ( max-width: $project + px ) {
-			padding: 0 get-vw(45);
-		}
-		
-		&:last-child {
-			padding-right: 0;
-		}
-		
-		&:hover {
-			> a {
-				color: $c-blue;
+	
+		> li {
+			.nav-default & {
+			    @extend %rel;
+				display: inline-block;
+				padding: 0 45px;
 			}
 			
-			.sub-menu {
+			.nav-full & {
+			    display: flex;
+			    justify-content: center;
+		        flex-direction: column;
+			}
+
+			a {
 				display: block;
-				animation: show_submenu .4s;
+				padding-bottom: 15px;
+				
+				.nav-full & {
+				    text-align: center;
+				}
+			}
+			
+			@media screen and ( max-width: $project + px ) {
+				padding: 0 get-vw(45);
+			}
+			
+			&:last-child {
+				.nav-default & {
+					padding-right: 0;
+				}
+			}
+			
+			&:hover {
+				.nav-default & {
+					> a {
+						color: $c-blue;
+					}
+					
+					.sub-menu {
+						display: block;
+						animation: show_submenu .4s;
+					}
+				}
 			}
 		}
 	}
@@ -53,20 +100,29 @@
 	}
 	
 	&__link {
-		@extend %underline;
-		padding-bottom: 0 !important;
+		.nav-default & {
+			@extend %underline;
+			padding-bottom: 0 !important;
+		}
 	}
-	
+
 	.sub-menu {
-		display: none;
-		border-radius: 4px;
-		box-shadow: rgba(0,0,0,.15) 0 0 6px;
-		position: absolute;
-		left: -8%; top: 35px;
-		width: 210px;
-		background-color: white;
-		border: 1px solid #e1e1e1;
-		text-align: left;
+		
+		.nav-default & {
+			position: absolute;
+			left: -8%; top: 35px;
+			display: none;
+			border-radius: 4px;
+			box-shadow: rgba(0,0,0,.15) 0 0 6px;
+			width: 210px;
+			background-color: white;
+			border: 1px solid #e1e1e1;
+		}
+		
+		.nav-full & {
+			display: block;
+			margin-bottom: 40px;
+		}
 		
 		&:before {
 			position: absolute;

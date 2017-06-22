@@ -50,6 +50,10 @@
 			easing: 'easeOutCubic',
 			duration: speed
 		});
+		
+		if ( $('body.nav-full.is-visible').length>0 ) {
+			story.Nav.menuHide();
+		}
 	}
 	
 	function isInView() {

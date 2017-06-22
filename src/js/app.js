@@ -4,10 +4,10 @@
 
 
 	$(document).ready(function() {
+	
+		story.Nav.init();
 		
 		if (story.Helper.exist('.b-lazy')) story.Helper.blazy();
-		
-		
 		
 		$('.js-goto').on('click', function(e) {
 			e.preventDefault();
