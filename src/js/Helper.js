@@ -40,9 +40,12 @@
 			page_offset = $(document).scrollTop(),
 			offset_diff = Math.abs(o - page_offset),
 			base_speed  = 500,
-			speed       = (offset_diff * base_speed) / 1000;
+			speed       = (offset_diff * base_speed) / 1000,
 			
 		offset = offset || 0;
+		
+		$(document).scrollTop(page_offset);
+		
 
 		$viewport.animate({
 			scrollTop: o + offset + 2
@@ -69,7 +72,7 @@
 	function isWindowSmallerThan(resBorder) {
         return window.innerWidth < parseInt(resBorder, 10);
     }
-    
+
     function showOnScroll() {
     	var body = $(window), elements;
     	

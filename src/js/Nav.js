@@ -5,7 +5,8 @@
 		trigger = $('.js-nav'),
 		body = document.getElementsByTagName('body'),
 		listenKeys,
-		m = false;
+		m = false,
+		page_offset;
 	
 	Nav.prototype.init = function() {
 		this.menu();
@@ -31,25 +32,24 @@
 					b.removeClass('nav-full').addClass('nav-default');
 					h.removeClass('is-visible');
 				}
-
 			}
 		});
 	};
 	
 	Nav.prototype.menuHide = function() {
-		
+
 		m = false;
 		
 		$(trigger).toggleClass('icon-navicon icon-close');
 
 		$(body).removeClass('no-scroll is-visible');
 		document.removeEventListener('keydown', listenKeys);
-		
 	};
-	
+
 	Nav.prototype.menuShow = function() {
 		
 		m = true;
+		page_offset = $(document).scrollTop();
 			
 		$(trigger).toggleClass('icon-navicon icon-close');
 
@@ -62,6 +62,8 @@
 		    	hideMenu();
 		    }
 		};
+		
+		$(document).scrollTop(page_offset);		
 	};
 
 	Nav.prototype.menu = function() {	
