@@ -1568,6 +1568,8 @@ width: 215px;
 }
 
 .b-loaded {
+	@extend %anim-slow;
+
 	&.c-section--01 {
 		.c-logo {
 			transform: translateY(0);
