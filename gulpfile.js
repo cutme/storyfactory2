@@ -20,7 +20,8 @@ var gulp         = require('gulp'),
     bowerFiles   = require('gulp-main-bower-files'),
     w3cjs = require('gulp-w3cjs'),
     merge        = require('merge-stream'),
-    spritesmith  = require('gulp.spritesmith');
+    spritesmith  = require('gulp.spritesmith'),
+    critical = require('critical').stream;
 
 
 var config = {
@@ -41,6 +42,16 @@ var config = {
     fonts: 'web/fonts',
   }
 }
+
+// Generate & Inline Critical-path CSS 
+gulp.task('critical', function () {
+    return gulp.src('web/*.html')
+        .pipe(critical({base: 'web/', inline: true, css: 'web/css/style.css'}))
+        .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
+        .pipe(gulp.dest('web'));
+});
+
+
 
 gulp.task('default', ['watch']);
 
