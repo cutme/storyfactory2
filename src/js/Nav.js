@@ -10,7 +10,7 @@
 	Nav.prototype.init = function() {
 		this.menu();
 		this.show();
-	}
+	};
 	
 	Nav.prototype.show = function() {
 		var w = $(window), pos = 0, nav = $('.c-nav'), b = $('body'), h = $('.js-nav');
@@ -79,7 +79,7 @@
 		
 		$('.no-click').on('click', function(e) {
 			e.preventDefault();	
-		})
+		});
 	};
 
 

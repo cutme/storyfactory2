@@ -1478,18 +1478,18 @@ width: 215px;
 			margin-bottom: 60px;
 			font-weight: $bold;
 			color: white;
-			
+
 			img {
 				@media screen and ( max-width: $project + px ) {
 					width: get-vw(240);
 				}
 			}
-			
+
 			&__name {
 				margin-bottom: 20px;
 				font-size: 42.6px;
 				letter-spacing: 8px;
-				
+
 				@media screen and ( max-width: $project + px ) {
 					margin-bottom: get-vw(20);
 					font-size: get-vw(43);

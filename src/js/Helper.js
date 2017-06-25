@@ -42,7 +42,7 @@
 			base_speed  = 500,
 			speed       = (offset_diff * base_speed) / 1000;
 			
-		offset = offset || 0;		
+		offset = offset || 0;
 
 		$viewport.animate({
 			scrollTop: o + offset + 2
@@ -71,17 +71,28 @@
     }
     
     function showOnScroll() {
-    	var body = $(window);
+    	var body = $(window), elements;
+    	
+    	function sos() {
+	    	
+    	}
+
+		var handler = body.on('scroll', function() {	
 		
-		body.on('scroll', function() {		
-	        $('.anim').each( function(){
-				var bottomOfObject = $(this).offset().top,
-		          	bottomOfWindow = $(window).scrollTop() + $(window).height();
-	
-				if( bottomOfWindow > bottomOfObject ) {
-					$(this).addClass('anim--done');
-				}
-			});
+			elements = $('.anim').not('.anim--done').length;
+			
+			if (elements) {
+		        $('.anim').not('.anim--done').each( function(){
+					var bottomOfObject = $(this).offset().top + 100,
+			          	bottomOfWindow = $(window).scrollTop() + $(window).height();
+		
+					if( bottomOfWindow > bottomOfObject ) {
+						$(this).addClass('anim--done');
+					}
+				});
+			} else {
+				body.off('scroll', handler);
+			}
 		});
     }
 	

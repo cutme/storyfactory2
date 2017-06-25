@@ -7,23 +7,42 @@
 	will-change: transform, opacity;
 	transition-duration: 3s;
 	transition-delay: .5s;
-	opacity: 0;
+	
+	
+	&--TextblockLineFromTop {
+		&:after {
+			@extend %anim-slow;
+			transition-delay: 1.5s;
+			height: 0;
+			opacity: 0;
+		}
+	}
 	
 	&--bottom {
+		opacity: 0;
 		transform: translateY(50px);
 	}
 	
 	&--left {
+		opacity: 0;
 		transform: translateX(50px);
 	}
 	
 	&--right {
+		opacity: 0;
 		transform: translateX(-50px);
 	}
 	
 	&--done {
 		opacity: 1;
 		transform: translateY(0);
+	}
+	
+	&--done {
+		&:after {
+			opacity: 1;
+			height: calc(100% - 18px);
+		}
 	}
 }
 
