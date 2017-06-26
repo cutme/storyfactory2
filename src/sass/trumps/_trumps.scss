@@ -4,9 +4,7 @@
 
 .anim {
 	
-	will-change: transform, opacity;
-	transition-duration: 3s;
-	transition-delay: .5s;
+	//transition-delay: .5s;
 	
 	
 	&--TextblockLineFromTop {
@@ -39,6 +37,8 @@
 	
 	&--done {
 		@extend %anim;
+		will-change: transform, opacity;
+		transition-duration: 3s;
 
 		&:after {
 			@extend %anim-slow;
