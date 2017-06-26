@@ -3,7 +3,7 @@
 }
 
 .anim {
-	@extend %anim;
+	
 	will-change: transform, opacity;
 	transition-duration: 3s;
 	transition-delay: .5s;
@@ -11,7 +11,6 @@
 	
 	&--TextblockLineFromTop {
 		&:after {
-			@extend %anim-slow;
 			transition-delay: 1.5s;
 			height: 0;
 			opacity: 0;
@@ -39,7 +38,10 @@
 	}
 	
 	&--done {
+		@extend %anim;
+
 		&:after {
+			@extend %anim-slow;
 			opacity: 1;
 			height: calc(100% - 18px);
 		}
