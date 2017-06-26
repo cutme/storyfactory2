@@ -62,11 +62,14 @@
 	function isInView() {
 		var bottomOfWindow = $(window).scrollTop() + $(window).height();
 
-		$('.anim').each(function() {
-			if ( $(this).offset().top < bottomOfWindow ) {
-				$(this).addClass('anim--done');
-			}
-		});
+		setInterval(function() {
+			$('.anim').each(function() {
+				if ( $(this).offset().top < bottomOfWindow ) {
+					$(this).addClass('anim--done');
+				}
+			});
+		}, 1000);
+		
 	}
 	
 	function isWindowSmallerThan(resBorder) {
