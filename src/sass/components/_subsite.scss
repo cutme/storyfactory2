@@ -3,8 +3,9 @@
 	min-height: 100vh;
 	background: {
 		image: url(../img/bg/bg-subsite.jpg);
-		repeat: no-repeat;
+		repeat: repeat-y;
 		position: center top;
+		attachment: fixed;
 	}
 	padding-bottom: 100px;
 	
@@ -113,6 +114,7 @@
 	
 	&__top {
 		height: 184px;
+		background-image: url(../img/bg/bg-subsite-top.jpg);
 	}
 	
 	&__content {

@@ -34,8 +34,11 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
-	
-	
+
+	&--top {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
 	
 	&--done {
 		@extend %anim;
@@ -47,11 +50,6 @@
 			opacity: 1;
 			height: calc(100% - 18px);
 		}
-	}
-	
-	&--top {
-		opacity: 0;
-		transform: translateY(-50px);
 	}
 }
 

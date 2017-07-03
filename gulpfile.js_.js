@@ -21,7 +21,7 @@ var gulp         = require('gulp'),
     w3cjs = require('gulp-w3cjs'),
     merge        = require('merge-stream'),
     spritesmith  = require('gulp.spritesmith'),
-    batch = require('gulp-batch');
+    critical = require('critical').stream;
 
 
 var config = {
@@ -43,6 +43,16 @@ var config = {
   }
 }
 
+// Generate & Inline Critical-path CSS 
+gulp.task('critical', function () {
+    return gulp.src('web/*.html')
+        .pipe(critical({base: 'web/', inline: true, css: 'web/css/style.css'}))
+        .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
+        .pipe(gulp.dest('web'));
+});
+
+
+
 gulp.task('default', ['watch']);
 
 gulp.task('jshint', function() {
@@ -51,7 +61,6 @@ gulp.task('jshint', function() {
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(concat('script.js'))
         .pipe(uglify())
-        .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
         .pipe(gulp.dest('web/js/'))
         .pipe(browserSync.stream());
 });
@@ -146,36 +155,19 @@ gulp.task('w3cjs', function () {
         .pipe(w3cjs.reporter());
 });
 
+gulp.task('default', ['sass', 'jshint', 'fileinclude']);
 
-gulp.task('browser-sync', function() {  
-    browserSync.init(["css/*.css", "js/*.js"], {
-        server: {
-            baseDir: "./web"
-        }
-    });
+gulp.task('watch', function() {
+    
+    browserSync.init({
+	server: {
+		baseDir: './web'
+		}
+	})
+	
+    gulp.watch('src/js/**/*.js', ['jshint']);
+    gulp.watch('src/sass/**/*.scss', ['sass']);
+    gulp.watch('src/img/**/*', ['img']);
+    gulp.watch('src/**/*.html', ['fileinclude']);
+    gulp.watch('src/includes/**/*.html', ['fileinclude']);
 });
-
-
-gulp.task('default', ['sass', 'browser-sync'], function () {  
-    watch("src/sass/**/*.scss", batch(function (events, done) {
-        gulp.start('sass', done);
-    }));
-    
-    watch("src/js/**/*.js", batch(function (events, done) {
-        gulp.start('jshint', done);
-    }));
-    
-    watch("src/img/**/*", batch(function (events, done) {
-        gulp.start('img', done);
-    }));
-    
-    watch("src/**/*.html", batch(function (events, done) {
-        gulp.start('fileinclude', done);
-    }));
-    
-    watch("src/includes/**/*.html", batch(function (events, done) {
-        gulp.start('fileinclude', done);
-    }));
-});
-
-
